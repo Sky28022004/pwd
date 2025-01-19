@@ -55,8 +55,8 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" onclick="site_title.value = general_data.site_title, site_title.value = general_data.site_about" class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
-                                    <button type="button" onclick="updt_general(site_title.value,site_about.value)" class="btn custom-bg text-white shadow-none" onclick="update_general()">SUBMIT</button>
+                                    <button type="button" class="btn text-secondary shadow-none" data-bs-dismiss="modal" onclick="reset_modal()">CANCEL</button>
+                                    <button type="button" class="btn custom-bg text-white shadow-none" onclick="update_general()">SUBMIT</button>
                                 </div>
                             </div>
                         </form>
@@ -73,67 +73,74 @@
 
         // Function to fetch general settings
         function get_general() {
-            let site_title = document.getElementById('site_title');
-            let site_about = document.getElementById('site_about');
+    let site_title = document.getElementById('site_title');
+    let site_about = document.getElementById('site_about');
 
-            let site_title_inp = document.getElementById('site_title_inp');
-            let site_about_inp = document.getElementById('site_about_inp');            
+    let site_title_inp = document.getElementById('site_title_inp');
+    let site_about_inp = document.getElementById('site_about_inp');            
 
-            let xhr = new XMLHttpRequest();
-            xhr.open("POST", "ajax/setting_crud.php", true);
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "ajax/setting_crud.php", true);
+    xhr.setRequestHeader('Content-Type', 'application/json'); // Menggunakan JSON
 
-            xhr.onload = function () {
-                if (this.status == 200) {
-                    general_data = JSON.parse(this.responseText);
+    xhr.onload = function () {
+        if (this.status == 200) {
+            general_data = JSON.parse(this.responseText);
 
-                    site_title.innerText = general_data.site_title;
-                    site_about.innerText = general_data.site_about;
+            site_title.innerText = general_data.site_title;
+            site_about.innerText = general_data.site_about;
 
-                    site_title_inp.value = general_data.site_title;
-                    site_about_inp.value = general_data.site_about;
+            site_title_inp.value = general_data.site_title;
+            site_about_inp.value = general_data.site_about;
+        } else {
+            console.error("Failed to fetch settings");
+        }
+    };
 
-                    // Populate modal inputs
-                    document.getElementById('site_title_input').value = general_data.site_title;
-                    document.getElementById('site_about_input').value = general_data.site_about;
-                } else {
-                    console.error("Failed to fetch settings");
-                }
-            };
+    const data = JSON.stringify({ action: "get_general" });
+    xhr.send(data);
+}
 
-            xhr.send("action=get_general");
+        // Function to reset modal inputs to original values
+        function reset_modal() {
+            document.getElementById('site_title_inp').value = general_data.site_title;
+            document.getElementById('site_about_inp').value = general_data.site_about;
         }
 
         // Function to update general settings
         function update_general() {
-            let site_title_input = document.getElementById('site_title_input').value.trim();
-            let site_about_input = document.getElementById('site_about_input').value.trim();
+    let site_title_input = document.getElementById('site_title_inp').value.trim();
+    let site_about_input = document.getElementById('site_about_inp').value.trim();
 
-            if (site_title_input == "" || site_about_input == "") {
-                alert("Please fill out all fields.");
-                return;
+    if (site_title_input == "" || site_about_input == "") {
+        alert("Please fill out all fields.");
+        return;
+    }
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "ajax/setting_crud.php", true);
+    xhr.setRequestHeader('Content-Type', 'application/json'); // Menggunakan JSON
+
+    xhr.onload = function () {
+        if (this.status == 200) {
+            if (this.responseText == "success") {
+                alert("Settings updated successfully!");
+                get_general();
+                let modal = bootstrap.Modal.getInstance(document.getElementById('general-se'));
+                modal.hide();
+            } else {
+                alert(this.responseText);
             }
-
-            let xhr = new XMLHttpRequest();
-            xhr.open("POST", "ajax/setting_crud.php", true);
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-            xhr.onload = function () {
-                if (this.status == 200) {
-                    if (this.responseText == "success") {
-                        alert("Settings updated successfully!");
-                        get_general();
-                        let modal = bootstrap.Modal.getInstance(document.getElementById('general-se'));
-                        modal.hide();
-                    } else {
-                        alert("Failed to update settings. Please try again.");
-                    }
-                }
-            };
-
-            let data = `action=update_general&site_title=${encodeURIComponent(site_title_input)}&site_about=${encodeURIComponent(site_about_input)}`;
-            xhr.send(data);
         }
+    };
+
+    const data = JSON.stringify({
+        action: "update_general",
+        site_title: site_title_input,
+        site_about: site_about_input
+    });
+    xhr.send(data);
+}
 
         // Load general settings on page load
         window.onload = function () {
@@ -141,4 +148,4 @@
         };
     </script>
 </body>
-</html>
+</html> 
