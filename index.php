@@ -76,6 +76,8 @@
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five</option>
                         </select>
                         </div>
                         <div class="col-lg-2 mb-3">
@@ -85,6 +87,8 @@
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five</option>
                         </select>
                         </div>
                         <div class="col-lg-1 mb-lg-3 mt-2">
@@ -100,15 +104,15 @@
     <!-- room -->
 
     <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">OUR ROOMS</h2>
-
-    <div class="container">
-        <div class="row">
+    
+        <div class="container">
+            <div class="row">
             <div class="col-lg-4 col-md-6 my-3">
                 <div class="card border-0 shadow" style="max-width: 350px; margin: auto;">
                     <img src="images/rooms/1.jpg" class="card-img-top">
                     <div class="card-body">
-                      <h5>Simple Room Name</h5>
-                      <h6 class="mb-4">Rp.500.000 per night</h6>
+                      <h5>Tulip Room</h5>
+                      <h6 class="mb-4">Rp.750.000 per night</h6>
                       <div class="features mb-4">
                         <h6 class="mb-1">Features</h6>
                         <span class="badge rounded-pill bg-light text-dark text-wrap">
@@ -136,6 +140,15 @@
                             Room heater
                         </span>
                       </div>
+                      <div class="guest mb-4">
+                            <h6 class="mb-1">Guest</h6>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap">
+                                3 Adults
+                            </span>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap">
+                                2 Children
+                            </span>
+                        </div>
                       <div class="rating mb-4">
                         <h6 class="mb-1">Rating</h6>
                         <span class="badge rounded-pill bg-light">
@@ -157,12 +170,12 @@
                 <div class="card border-0 shadow" style="max-width: 350px; margin: auto;">
                     <img src="images/rooms/1.jpg" class="card-img-top">
                     <div class="card-body">
-                      <h5>Simple Room Name</h5>
+                      <h5>Studio Room</h5>
                       <h6 class="mb-4">Rp.500.000 per night</h6>
                       <div class="features mb-4">
                         <h6 class="mb-1">Features</h6>
                         <span class="badge rounded-pill bg-light text-dark text-wrap">
-                            2 Rooms
+                            1 Bedroom
                         </span>
                         <span class="badge rounded-pill bg-light text-dark text-wrap">
                             1 Bathroom
@@ -186,6 +199,15 @@
                             Room heater
                         </span>
                       </div>
+                      <div class="guest mb-4">
+                            <h6 class="mb-1">Guest</h6>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap">
+                                2 Adults
+                            </span>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap">
+                                1 Children
+                            </span>
+                        </div>
                       <div class="rating mb-4">
                         <h6 class="mb-1">Rating</h6>
                         <span class="badge rounded-pill bg-light">
@@ -207,18 +229,21 @@
                 <div class="card border-0 shadow" style="max-width: 350px; margin: auto;">
                     <img src="images/rooms/1.jpg" class="card-img-top">
                     <div class="card-body">
-                      <h5>Simple Room Name</h5>
-                      <h6 class="mb-4">Rp.500.000 per night</h6>
+                      <h5>Executive Room</h5>
+                      <h6 class="mb-4">Rp.2.500.000 per night</h6>
                       <div class="features mb-4">
                         <h6 class="mb-1">Features</h6>
                         <span class="badge rounded-pill bg-light text-dark text-wrap">
-                            2 Rooms
+                            3 Bedroom
                         </span>
                         <span class="badge rounded-pill bg-light text-dark text-wrap">
-                            1 Bathroom
+                            2 Bathroom
                         </span>
                         <span class="badge rounded-pill bg-light text-dark text-wrap">
-                            1 Balcony
+                            3 Balcony
+                        </span>
+                        <span class="badge rounded-pill bg-light text-dark text-wrap">
+                            Kitchen
                         </span>
                       </div>
                       <div class="facilities mb-4">
@@ -236,13 +261,23 @@
                             Room heater
                         </span>
                       </div>
+                      <div class="guest mb-4">
+                            <h6 class="mb-1">Guest</h6>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap">
+                                5 Adults
+                            </span>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap">
+                                4 Children
+                            </span>
+                        </div>
                       <div class="rating mb-4">
                         <h6 class="mb-1">Rating</h6>
                         <span class="badge rounded-pill bg-light">
                             <i class="bi bi-star-fill text-warning"></i>
                             <i class="bi bi-star-fill text-warning"></i>
                             <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-half text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
                         </span>
                       </div>
                       <div class="d-flex justify-content-evenly mb-2">

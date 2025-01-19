@@ -6,6 +6,11 @@
     <title>HotelKu.Co - ABOUT</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <?php require('inc/links.php') ?>
+    <style>
+        .box{
+            border-top-color: var(--teal) !important;
+        }
+    </style>
 </head>
 <body class="bg-light">
 
@@ -22,8 +27,8 @@
     </div>
 
     <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-5 mb-4s">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-lg-6 col-md-5 mb-4 order-lg-1 order-2">
                 <h3 class="mb-3">Lorem ipsum dolor sit.</h3>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -32,12 +37,23 @@
                     Fugit excepturi labore libero quos. Ullam, quisquam voluptatum!
                 </p>
             </div>
-            <div class="col-lg-5 col-md-5">
-                <img src="images/" alt="">
+            <div class="col-lg-5 col-md-5 order-lg-1 order-1">
+                <img src="images/about/about.jpg" class="w-100">
             </div>
         </div>
     </div>
 
     <?php require('inc/footer.php') ?>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+  </script>
+
 </body>
 </html>
